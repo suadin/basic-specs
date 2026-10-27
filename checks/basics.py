@@ -139,7 +139,8 @@ def generated_doc(root: Path, manifest: dict) -> str:
             continue
         mapped = True
         for name in found:
-            lines.append(f"- `{rule['id']}` — {name}")
+            label = name if name.startswith(f"[{rule['id']}]") else f"[{rule['id']}] {name}"
+            lines.append(f"- `{label}`")
     if not mapped:
         lines.append("None in this profile.")
     return "\n".join(lines).rstrip() + "\n"
@@ -177,9 +178,11 @@ def check_lock(root: Path, manifest: dict, errors: list[str]) -> None:
 
 
 def check_documents(root: Path, manifest: dict, errors: list[str]) -> None:
-    for name in ("README.md", "RELEASE-NOTES.md"):
-        if not (root / name).is_file():
-            errors.append(f"{name} is missing")
+    if not (root / "README.md").is_file():
+        errors.append("README.md is missing")
+    release_notes = manifest.get("releaseNotes", "RELEASE-NOTES.md")
+    if not (root / release_notes).is_file():
+        errors.append(f"{release_notes} is missing")
     app_specs = manifest.get("appSpecs", "docs/APP-SPECS.md")
     if not (root / app_specs).is_file():
         errors.append(f"{app_specs} is missing")

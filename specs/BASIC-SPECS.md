@@ -1,9 +1,10 @@
 # Basic specs
 
 The reusable base for a small web app whose primary reader is a future AI session.
-Project rules stay in the app and never weaken a rule here. A rule that does not apply
-is named with its ID, a reason and a review date in `basics.json`; it is never dropped
-silently.
+Project rules stay in the app and never weaken a rule here. See
+[README](../README.md#overview) for setup, operation and deployment. A rule that does
+not apply is named with its ID, a reason and a review date in `basics.json`; it is never
+dropped silently.
 
 ## Documents
 
