@@ -1,6 +1,6 @@
 {
   "standard": "1.1.0",
-  "updatedAt": "2026-10-27T21:35Z",
+  "updatedAt": "2026-10-27T21:49Z",
   "apps": [
     {
       "repo": "suadin/app-template",
@@ -16,7 +16,7 @@
       "latestRun": {
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/suadin/app-template/actions/runs/40587743639"
+        "url": "https://github.com/suadin/app-template/actions/runs/40589600582"
       }
     },
     {
@@ -33,7 +33,7 @@
       "latestRun": {
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/suadin/diary/actions/runs/40586197817"
+        "url": "https://github.com/suadin/diary/actions/runs/40589609948"
       }
     },
     {
@@ -50,7 +50,7 @@
       "latestRun": {
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/suadin/die-wand/actions/runs/40586194428"
+        "url": "https://github.com/suadin/die-wand/actions/runs/40589606336"
       }
     },
     {
@@ -67,7 +67,7 @@
       "latestRun": {
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/suadin/four-wins/actions/runs/40587153991"
+        "url": "https://github.com/suadin/four-wins/actions/runs/40589609140"
       }
     }
   ]
