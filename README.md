@@ -29,7 +29,7 @@ For an app without a manifest:
 python3 basics/check.py init --root . --profile web-static
 ```
 
-The [specimen](https://suadin.github.io/basic-specs/specimen/) shows the visual
+The [specimen](https://suadin.github.io/basic-specs/) shows the visual
 language, the footer states and the reader. The separate
 [`app-template`](https://github.com/suadin/app-template) is a vanilla static starter
 with Lorem Ipsum, tests and a green check.
