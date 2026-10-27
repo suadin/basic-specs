@@ -89,7 +89,7 @@ class CheckerTest(unittest.TestCase):
         result = self.run_basics("check")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         text = (self.app / "docs" / "BASIC-SPECS.md").read_text()
-        self.assertIn("generated; do not edit", text)
+        self.assertIn("Generated from Basic Specs", text)
         self.assertIn("This app", text)
 
     def test_hand_edit_fails(self):
