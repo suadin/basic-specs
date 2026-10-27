@@ -1,6 +1,6 @@
 {
   "standard": "1.1.0",
-  "updatedAt": "2026-10-27T21:32Z",
+  "updatedAt": "2026-10-27T21:35Z",
   "apps": [
     {
       "repo": "suadin/app-template",
@@ -16,7 +16,7 @@
       "latestRun": {
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/suadin/app-template/actions/runs/40586185553"
+        "url": "https://github.com/suadin/app-template/actions/runs/40587743639"
       }
     },
     {
