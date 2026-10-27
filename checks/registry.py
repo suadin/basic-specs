@@ -41,8 +41,26 @@ def raw(repo: str, branch: str, name: str) -> dict | None:
         return None
 
 
+def update_kind(pinned: str | None, latest: str) -> str:
+    try:
+        old = [int(part) for part in str(pinned).split(".")[:3]]
+        new = [int(part) for part in latest.split(".")[:3]]
+    except ValueError:
+        return "unknown"
+    if len(old) < 3 or len(new) < 3:
+        return "unknown"
+    if new[0] > old[0]:
+        return "major"
+    if new[1] > old[1]:
+        return "minor"
+    if new[2] > old[2]:
+        return "patch"
+    return "none"
+
+
 def main() -> int:
     query = urllib.parse.quote(f"topic:basic-specs user:{OWNER}")
+    latest = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     found = api(f"/search/repositories?q={query}&per_page=100")
     apps = []
     for repo in found.get("items", []):
@@ -57,8 +75,11 @@ def main() -> int:
             {
                 "repo": full,
                 "url": repo["html_url"],
+                "appVersion": manifest.get("appVersion"),
                 "profiles": manifest.get("profiles", []),
                 "version": manifest.get("standard"),
+                "latest": latest,
+                "update": update_kind(manifest.get("standard"), latest),
                 "deviations": len(manifest.get("deviations") or []),
                 "latestRun": {
                     "status": latest.get("status"),
@@ -81,19 +102,20 @@ def main() -> int:
         "",
         f"Standard: **{data['standard']}** · updated {data['updatedAt']}",
         "",
-        "| App | Version | Profiles | Deviations | Latest run |",
-        "|---|---|---|---|---|",
+        "| App | App version | Standard | Update | Profiles | Deviations | Latest run |",
+        "|---|---|---|---|---|---|---|",
     ]
     for app in apps:
         run = app["latestRun"]
         status = run.get("conclusion") or run.get("status") or "not run"
         link = f"[{status}]({run['url']})" if run.get("url") else status
         lines.append(
-            f"| [{app['repo']}]({app['url']}) | {app['version']} | "
+            f"| [{app['repo']}]({app['url']}) | {app['appVersion'] or '—'} | "
+            f"{app['version']} | {app['update']} | "
             f"{', '.join(app['profiles'])} | {app['deviations']} | {link} |"
         )
     if not apps:
-        lines.append("| — | — | — | — | — |")
+        lines.append("| — | — | — | — | — | — | — |")
     (ROOT / "registry" / "REGISTRY.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"registry: {len(apps)} public app(s)")
     return 0

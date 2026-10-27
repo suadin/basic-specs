@@ -9,10 +9,15 @@ import {
 
 const DOCS = [
   ['readme', 'README', 'README.md'],
-  ['app-specs', 'APP SPECS', 'docs/APP-SPECS.md'],
+  ['app-specs', 'SPECS', 'docs/APP-SPECS.md', 'RELEASE-NOTES.md'],
   ['basic-specs', 'BASIC SPECS', 'docs/BASIC-SPECS.md'],
-  ['release-notes', 'RELEASE NOTES', 'RELEASE-NOTES.md'],
 ];
+
+function composeSpecs(appSpecs, releaseNotes) {
+  const notes = releaseNotes.replace(/^#\s+.*$/m, '').replace(/^##\s+/gm, '### ').trim();
+  const rules = appSpecs.replace(/^#\s+.*$/m, '').trim();
+  return `# SPECS\n\n## Changelog\n\n${notes}\n\n${rules}\n`;
+}
 
 const ICONS = {
   book: '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v18H6.5A2.5 2.5 0 0 1 4 18.5v-13Z"/><path d="M8 8h8M8 12h8"/>',
@@ -56,9 +61,14 @@ function icon(name, size = 16) {
 }
 
 async function loadDocs() {
-  state.docs = await Promise.all(DOCS.map(async ([slug, title, file]) => {
+  state.docs = await Promise.all(DOCS.map(async ([slug, title, file, changelog]) => {
     const response = await fetch(file);
-    return splitDocument({ slug, title, markdown: await response.text() });
+    let markdown = await response.text();
+    if (changelog) {
+      const notes = await fetch(changelog);
+      markdown = composeSpecs(markdown, await notes.text());
+    }
+    return splitDocument({ slug, title, markdown });
   }));
   for (const doc of state.docs) state.byslug[doc.slug] = doc;
 }
@@ -144,6 +154,12 @@ document.addEventListener('focusout', () => { elements.tooltip.hidden = true; })
 
 document.querySelector('#readme').addEventListener('click', () => {
   location.hash = docsHash('readme');
+});
+document.querySelector('#specs').addEventListener('click', () => {
+  location.hash = docsHash('app-specs');
+});
+document.querySelector('#basic-specs').addEventListener('click', () => {
+  location.hash = docsHash('basic-specs');
 });
 document.querySelector('#reader-close').addEventListener('click', () => {
   location.hash = '';

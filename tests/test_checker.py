@@ -54,6 +54,8 @@ class CheckerTest(unittest.TestCase):
             "profiles": ["web-static"],
             "docs": "docs/BASIC-SPECS.md",
             "appSpecs": "docs/APP-SPECS.md",
+            "appVersion": "1.0.0",
+            "runtime": "basic-specs.json",
             "deviations": deviations,
             "commands": {
                 "unit": "true",
@@ -91,6 +93,9 @@ class CheckerTest(unittest.TestCase):
         text = (self.app / "docs" / "BASIC-SPECS.md").read_text()
         self.assertIn("Generated from Basic Specs", text)
         self.assertIn("This app", text)
+        runtime = self.app / "basic-specs.json"
+        self.assertTrue(runtime.is_file())
+        self.assertIn('"appVersion": "1.0.0"', runtime.read_text())
 
     def test_hand_edit_fails(self):
         self.assertEqual(self.run_basics("docs").returncode, 0)

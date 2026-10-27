@@ -74,8 +74,9 @@ a { color: var(--green); }
 }
 .footer-items { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.55rem; font-size: 0.76rem; }
 .footer-sep { color: var(--muted); }
-#readme { padding: 0; border: 0; box-shadow: none; background: transparent; font-size: inherit; }
-#readme:hover { transform: none; box-shadow: none; color: var(--green); }
+#readme, #specs, #basic-specs { padding: 0; border: 0; box-shadow: none; background: transparent; font-size: inherit; }
+#readme:hover, #specs:hover, #basic-specs:hover { transform: none; box-shadow: none; color: var(--green); }
+.footer-logo { width: 15px; height: 15px; display: block; }
 
 .reader { max-width: 58rem; margin: 0 auto; }
 .reader-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }

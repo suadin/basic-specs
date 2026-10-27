@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.1.0 — 2026-10-27
+
+- Six footer items: README, SPECS, BASIC SPECS, source, unit, E2E.
+- App version and Basic Specs version are clickable documentation items.
+- Basic Specs turns red only for a newer major release; minor and patch updates are
+  visible in the tooltip.
+- SPECS begins with one Changelog page from `RELEASE-NOTES.md`; the separate release
+  notes tab is gone.
+- `version.json`, app runtime metadata and `appVersion` are part of the check.
+- This is a visible breaking change for external consumers; all workspace apps move
+  in the same pass.
+
 ## 1.0.2 — 2026-10-27
 
 - Fix remote `sync`: `--from` and `--source` no longer share one argparse target.

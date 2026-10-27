@@ -1,9 +1,9 @@
 # App specs — specimen
 
+## Content
+
 The specimen has no domain rules. Its only job is to show the shared rules in a page
 without business content.
-
-## Content
 
 - All text is Lorem Ipsum or a label for a Basic Specs state.
 - There is no data source, no token and no write action.
