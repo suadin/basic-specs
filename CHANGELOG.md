@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 — 2026-10-27
+
+- Fix remote `sync`: `--from` and `--source` no longer share one argparse target.
+
 ## 1.0.1 — 2026-10-27
 
 - Generated note is plain text that every reader renders without markup.
