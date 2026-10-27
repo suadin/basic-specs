@@ -60,7 +60,7 @@ def update_kind(pinned: str | None, latest: str) -> str:
 
 def main() -> int:
     query = urllib.parse.quote(f"topic:basic-specs user:{OWNER}")
-    latest = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+    latest_version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     found = api(f"/search/repositories?q={query}&per_page=100")
     apps = []
     for repo in found.get("items", []):
@@ -70,7 +70,7 @@ def main() -> int:
         if not manifest:
             continue
         run = api(f"/repos/{full}/actions/runs?per_page=1").get("workflow_runs", [])
-        latest = run[0] if run else {}
+        latest_run = run[0] if run else {}
         apps.append(
             {
                 "repo": full,
@@ -78,13 +78,13 @@ def main() -> int:
                 "appVersion": manifest.get("appVersion"),
                 "profiles": manifest.get("profiles", []),
                 "version": manifest.get("standard"),
-                "latest": latest,
-                "update": update_kind(manifest.get("standard"), latest),
+                "latest": latest_version,
+                "update": update_kind(manifest.get("standard"), latest_version),
                 "deviations": len(manifest.get("deviations") or []),
                 "latestRun": {
-                    "status": latest.get("status"),
-                    "conclusion": latest.get("conclusion"),
-                    "url": latest.get("html_url"),
+                    "status": latest_run.get("status"),
+                    "conclusion": latest_run.get("conclusion"),
+                    "url": latest_run.get("html_url"),
                 },
             }
         )

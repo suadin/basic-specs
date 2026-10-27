@@ -1,61 +1,73 @@
 {
-  "standard": "1.0.2",
-  "updatedAt": "2026-10-27T20:24Z",
+  "standard": "1.1.0",
+  "updatedAt": "2026-10-27T21:32Z",
   "apps": [
     {
       "repo": "suadin/app-template",
       "url": "https://github.com/suadin/app-template",
+      "appVersion": "1.0.0",
       "profiles": [
         "web-static"
       ],
-      "version": "1.0.2",
+      "version": "1.1.0",
+      "latest": "1.1.0",
+      "update": "none",
       "deviations": 0,
       "latestRun": {
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/suadin/app-template/actions/runs/40576211259"
+        "url": "https://github.com/suadin/app-template/actions/runs/40586185553"
       }
     },
     {
       "repo": "suadin/diary",
       "url": "https://github.com/suadin/diary",
+      "appVersion": "1.4.0",
       "profiles": [
         "web-server"
       ],
-      "version": "1.0.2",
+      "version": "1.1.0",
+      "latest": "1.1.0",
+      "update": "none",
       "deviations": 2,
       "latestRun": {
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/suadin/diary/actions/runs/40576223820"
+        "url": "https://github.com/suadin/diary/actions/runs/40586197817"
       }
     },
     {
       "repo": "suadin/die-wand",
       "url": "https://github.com/suadin/die-wand",
+      "appVersion": "0.5.0",
       "profiles": [
         "web-static"
       ],
-      "version": "1.0.2",
+      "version": "1.1.0",
+      "latest": "1.1.0",
+      "update": "none",
       "deviations": 0,
       "latestRun": {
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/suadin/die-wand/actions/runs/40576220448"
+        "url": "https://github.com/suadin/die-wand/actions/runs/40586194428"
       }
     },
     {
       "repo": "suadin/four-wins",
       "url": "https://github.com/suadin/four-wins",
+      "appVersion": "1.0.0",
       "profiles": [
         "web-static"
       ],
-      "version": "1.0.2",
+      "version": "1.1.0",
+      "latest": "1.1.0",
+      "update": "none",
       "deviations": 0,
       "latestRun": {
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/suadin/four-wins/actions/runs/40576216025"
+        "url": "https://github.com/suadin/four-wins/actions/runs/40587153991"
       }
     }
   ]
