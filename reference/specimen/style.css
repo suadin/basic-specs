@@ -60,7 +60,7 @@ a { color: var(--green); }
 .states { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--muted); }
 .state { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; padding: 0.55rem 0; border-bottom: 1px dashed var(--muted); }
 .state-label { width: 9rem; color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; }
-.footer-item { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; }
+.footer-item { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; white-space: nowrap; }
 .footer-item svg { flex: none; }
 .danger { color: var(--red); }
 
