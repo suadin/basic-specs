@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.1 — 2026-10-27
+
+- Clarify that a footer item never wraps internally; only the row wraps between
+  items on narrow screens.
+- Clarify that the automated test list stays inside the documentation card, below
+  the body and above the dashed separator.
+
 ## 1.1.0 — 2026-10-27
 
 - Six footer items: README, SPECS, BASIC SPECS, source, unit, E2E.

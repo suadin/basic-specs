@@ -1,5 +1,10 @@
 # Migrations
 
+## 1.1.1
+
+Clarifies footer item wrapping and the placement of the automated test list. No
+behavioural change for an app that already follows 1.1.0.
+
 ## 1.1.0
 
 - Add `appVersion` and `runtime` to `basics.json`.
