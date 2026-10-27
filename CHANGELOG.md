@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1 — 2026-10-27
+
+- Generated note is plain text that every reader renders without markup.
+- The normative spec links to the README.
+- Added the fleet report and the weekly update workflow template.
+
 ## 1.0.0 — 2026-10-27
 
 First version. Extracted from the workspace contract and the four-wins, die-wand and
