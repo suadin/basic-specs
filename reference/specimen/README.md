@@ -5,10 +5,10 @@ It is not an app: it has no data, no server, no account and no metric run.
 
 ## What to look at
 
-- The footer has four items and four different icons.
+- The footer has six items and six different icons.
 - The footer shows measured, missing and failed states in the section below the cards.
-- README opens the reader. The reader keeps header and footer visible and moves only
-  inside the main panel.
+- README opens the reader; the app version opens SPECS and the Basic Specs version
+  opens BASIC SPECS. SPECS starts with the Changelog.
 - Each document has tabs and icon sections; the active icon is yellow and rotated.
 - The address changes when a document or section opens and survives a reload.
 - Light and dark follow the operating system.
