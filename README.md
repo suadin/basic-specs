@@ -52,8 +52,9 @@ reason and a review date in `basics.json`; it never drops a rule silently.
 - **Major** — mandatory new rule, removed or renamed rule, changed behaviour.
 
 Active apps stay on the same major version. A minor lag is allowed but visible in the
-registry. Before a major release, `fleet check` must show every app migrated or every
-remaining exception documented.
+registry. Before a major release, `python3 checks/fleet.py` must show every app on the same
+major or every remaining exception documented. The `Basics update` workflow in each app syncs the
+latest release and opens a pull request; it never merges on its own.
 
 ## What lives here
 
