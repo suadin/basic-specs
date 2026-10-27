@@ -1,6 +1,6 @@
 {
-  "standard": "1.1.0",
-  "updatedAt": "2026-10-27T21:49Z",
+  "standard": "1.1.1",
+  "updatedAt": "2026-10-27T22:02Z",
   "apps": [
     {
       "repo": "suadin/app-template",
@@ -9,14 +9,14 @@
       "profiles": [
         "web-static"
       ],
-      "version": "1.1.0",
-      "latest": "1.1.0",
+      "version": "1.1.1",
+      "latest": "1.1.1",
       "update": "none",
       "deviations": 0,
       "latestRun": {
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/suadin/app-template/actions/runs/40589600582"
+        "url": "https://github.com/suadin/app-template/actions/runs/40591174836"
       }
     },
     {
@@ -26,14 +26,14 @@
       "profiles": [
         "web-server"
       ],
-      "version": "1.1.0",
-      "latest": "1.1.0",
+      "version": "1.1.1",
+      "latest": "1.1.1",
       "update": "none",
       "deviations": 2,
       "latestRun": {
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/suadin/diary/actions/runs/40589609948"
+        "url": "https://github.com/suadin/diary/actions/runs/40591183405"
       }
     },
     {
@@ -43,14 +43,14 @@
       "profiles": [
         "web-static"
       ],
-      "version": "1.1.0",
-      "latest": "1.1.0",
+      "version": "1.1.1",
+      "latest": "1.1.1",
       "update": "none",
       "deviations": 0,
       "latestRun": {
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/suadin/die-wand/actions/runs/40589606336"
+        "url": "https://github.com/suadin/die-wand/actions/runs/40591180913"
       }
     },
     {
@@ -60,14 +60,14 @@
       "profiles": [
         "web-static"
       ],
-      "version": "1.1.0",
-      "latest": "1.1.0",
+      "version": "1.1.1",
+      "latest": "1.1.1",
       "update": "none",
       "deviations": 0,
       "latestRun": {
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/suadin/four-wins/actions/runs/40589609140"
+        "url": "https://github.com/suadin/four-wins/actions/runs/40591178107"
       }
     }
   ]
