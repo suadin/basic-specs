@@ -24,6 +24,7 @@ body {
 .logo { width: 2rem; height: 2rem; }
 .actions { display: flex; gap: 0.5rem; }
 .actions .button { padding: 0.35rem 0.7rem; font-size: 0.8rem; }
+.actions .mode.active { background: var(--yellow); transform: rotate(-1deg); }
 
 .main {
   width: min(72rem, 100%);
@@ -76,6 +77,7 @@ a { color: var(--green); }
 .footer-sep { color: var(--muted); }
 #readme, #specs, #basic-specs { padding: 0; border: 0; box-shadow: none; background: transparent; font-size: inherit; }
 #readme:hover, #specs:hover, #basic-specs:hover { transform: none; box-shadow: none; color: var(--green); }
+#basic-specs.outdated { color: var(--red); }
 .footer-logo { width: 15px; height: 15px; display: block; }
 
 .reader { max-width: 58rem; margin: 0 auto; }

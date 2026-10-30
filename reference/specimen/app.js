@@ -1,4 +1,5 @@
 import {
+  composeSpecs,
   docsHash,
   escapeHtml,
   parseRoute,
@@ -12,12 +13,6 @@ const DOCS = [
   ['app-specs', 'SPECS', 'docs/APP-SPECS.md', 'RELEASE-NOTES.md'],
   ['basic-specs', 'BASIC SPECS', 'docs/BASIC-SPECS.md'],
 ];
-
-function composeSpecs(appSpecs, releaseNotes) {
-  const notes = releaseNotes.replace(/^#\s+.*$/m, '').replace(/^##\s+/gm, '### ').trim();
-  const rules = appSpecs.replace(/^#\s+.*$/m, '').trim();
-  return `# SPECS\n\n## Changelog\n\n${notes}\n\n${rules}\n`;
-}
 
 const ICONS = {
   book: '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v18H6.5A2.5 2.5 0 0 1 4 18.5v-13Z"/><path d="M8 8h8M8 12h8"/>',

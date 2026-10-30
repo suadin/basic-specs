@@ -1,5 +1,19 @@
 # Migrations
 
+## 1.2.0
+
+The reference implementation changed, so the copies in the apps have to follow. No rule
+changed and no app has to alter its behaviour.
+
+- `reference/specimen/reader.js` exports `composeSpecs`. Copy it over the app's
+  `reader.js` and delete the local function of the same name in `app.js`, otherwise two
+  copies live side by side.
+- `reference/specimen/style.css` gained two rules that only `app-template` had. Copy the
+  file over the app's `style.css` and keep the app's own rules below it.
+- `design/tokens.css` is unchanged.
+
+To check the result: `python3 checks/specimen_drift.py --workspace ~/dev`.
+
 ## 1.1.1
 
 Clarifies footer item wrapping and the placement of the automated test list. No

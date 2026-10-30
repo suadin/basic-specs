@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.0 — 2026-10-30
+
+- The reference implementation gains `composeSpecs` in `reader.js`: the reader composes
+  the SPECS page from the app rules and the release notes. It was written in `die-wand`
+  and never came back; `app.js` now imports it instead of defining a second copy.
+- Two generic rules move from `app-template` into `style.css`: `.actions .mode.active`
+  and `#basic-specs.outdated`.
+- New tool `checks/specimen_drift.py` compares every app's copy of the shared runtime
+  with the specimen. `reader.js` and `tokens.css` must be byte identical, `style.css`
+  must start with the specimen; an app may append. Advisory: it runs where the
+  workspace lies, not in this repository's CI.
+
 ## 1.1.1 — 2026-10-27
 
 - Clarify that a footer item never wraps internally; only the row wraps between
