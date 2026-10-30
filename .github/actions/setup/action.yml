@@ -1,0 +1,43 @@
+name: Basic Specs setup
+description: >-
+  Check out the app and prepare Python, pnpm and Node. Every app's Basics workflow
+  repeated these steps; this is the one copy. The app keeps only its own commands.
+
+inputs:
+  python:
+    description: Python version, empty to skip the Python step
+    default: "3.12"
+  node:
+    description: Node version
+    default: "24"
+  pnpm:
+    description: pnpm version
+    default: "10.1.0"
+  cache:
+    description: '"true" caches pnpm, which needs pnpm-lock.yaml at the repository root'
+    default: "false"
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v5
+      if: inputs.python != ''
+      with:
+        python-version: ${{ inputs.python }}
+
+    - uses: pnpm/action-setup@v4
+      with:
+        version: ${{ inputs.pnpm }}
+
+    - uses: actions/setup-node@v4
+      if: inputs.cache != 'true'
+      with:
+        node-version: ${{ inputs.node }}
+
+    - uses: actions/setup-node@v4
+      if: inputs.cache == 'true'
+      with:
+        node-version: ${{ inputs.node }}
+        cache: pnpm

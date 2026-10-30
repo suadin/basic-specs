@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.1 — 2026-10-30
+
+- `.github/actions/setup` replaces the checkout, Python, pnpm and Node steps that every
+  app repeated in its Basics workflow. An app keeps only its own commands.
+- `.github/workflows/update-app.yml` is the reusable form of the weekly sync; the six
+  copies in the apps become a caller of eight lines (`workflow_call`).
+
 ## 1.2.0 — 2026-10-30
 
 - The reference implementation gains `composeSpecs` in `reader.js`: the reader composes

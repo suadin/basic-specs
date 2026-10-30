@@ -1,5 +1,18 @@
 # Migrations
 
+## 1.2.1
+
+No rule changed. This release moves CI plumbing into the standard.
+
+- In `basics.yml`, replace the checkout, setup-python, pnpm/action-setup and
+  setup-node steps with one line:
+  `- uses: suadin/basic-specs/.github/actions/setup@v1.2.1` plus `with:` for `node`,
+  `python`, `pnpm` and `cache`. Everything after it - the app's own commands - stays.
+- Replace the body of `basics-update.yml` with a single job that calls
+  `suadin/basic-specs/.github/workflows/update-app.yml@v1.2.1`.
+
+Adopting this changes nothing about how an app is checked.
+
 ## 1.2.0
 
 The reference implementation changed, so the copies in the apps have to follow. No rule
